@@ -1,0 +1,52 @@
+spring:
+      profiles: 
+	          active:
+			  - dev
+---
+server:
+  port: 8101
+spring:
+  application:
+    name: spring-cloud-config-client
+  profiles: dev
+#Eureka配置  服务的注册
+eureka: 
+  client:  #将客户端注册进eureka服务列表内
+    service-url:  
+      defaultZone: http://springCloud7001.com:7001/eureka/
+  instance: 
+    instance-id: springCloud-config-dept8101 #修改服务名
+    prefer-ip-address: true #显示访问路径
+#设置info 显示信息 （即点击微服务后显示的信息）
+info:
+  app.name: vnb-springCloud
+  company.name: www.hsw.com
+  author.name: hsw
+  author.email: heShaoWenCode@163.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+---
+server:
+  port: 8102
+spring:
+  application:
+    name: spring-cloud-config-client
+  profiles: dev
+#Eureka配置  服务的注册
+eureka: 
+  client:  #将客户端注册进eureka服务列表内
+    service-url:  
+      defaultZone: http://springCloud7001.com:7001/eureka/
+  instance:
+    instance-id: springCloud-config-dept8102 #修改服务名
+    prefer-ip-address: true #显示访问路径
+#设置info 显示信息 （即点击微服务后显示的信息）
+info:
+  app.name: vnb-springCloud
+  company.name: www.hsw.com
+  author.name: hsw
+  author.email: heShaoWenCode@163.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
