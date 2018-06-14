@@ -1,0 +1,17 @@
+spring:
+        profiles:
+                active:
+                - dev
+---
+spring:
+        profiles: dev
+        application:
+                name: spring-cloud-dept
+
+---
+spring:
+        profiles: test
+        application:
+                name: spring-cloud-dept
+#  请确保为UTF-8格式
+
